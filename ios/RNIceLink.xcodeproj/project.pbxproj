@@ -21,12 +21,17 @@
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		8E576E851D60A9F3009E2636 /* libCocoa.VP8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E576E841D60A9DD009E2636 /* libCocoa.VP8.a */; };
+		8E576E861D60AA04009E2636 /* libCocoa.Opus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E576E811D60A9DD009E2636 /* libCocoa.Opus.a */; };
+		8E576E881D60AC19009E2636 /* VideoConferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E576E871D60AC19009E2636 /* VideoConferenceManager.swift */; };
 		8EA2110C1D609DC8003D2E6F /* libFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA211091D609DC8003D2E6F /* libFM.a */; };
 		8EA2110D1D609DC8003D2E6F /* libFMIceLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA2110A1D609DC8003D2E6F /* libFMIceLink.a */; };
 		8EA2110E1D609DC8003D2E6F /* libFMIceLinkWebRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA2110B1D609DC8003D2E6F /* libFMIceLinkWebRTC.a */; };
 		8EA211101D609EEC003D2E6F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA2110F1D609EEC003D2E6F /* GLKit.framework */; };
 		8EA211121D609F06003D2E6F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA211111D609F06003D2E6F /* libz.tbd */; };
 		8EA211291D60A041003D2E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA211281D60A041003D2E6F /* AppDelegate.swift */; };
+		8EB8AE111D60D8A400390F93 /* ReactNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */; };
+		8EB8AE141D60D9AE00390F93 /* VideoConference.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE131D60D9AE00390F93 /* VideoConference.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +112,20 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		8E576E801D60A9DD009E2636 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E576E791D60A9DD009E2636 /* Cocoa.Opus-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C520CC219675AF30031B03C;
+			remoteInfo = Cocoa.Opus;
+		};
+		8E576E831D60A9DD009E2636 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E576E7C1D60A9DD009E2636 /* Cocoa.VP8-iOS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C520CC219675AF30031B03C;
+			remoteInfo = Cocoa.VP8;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +147,9 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		8E576E791D60A9DD009E2636 /* Cocoa.Opus-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Cocoa.Opus-iOS.xcodeproj"; sourceTree = "<group>"; };
+		8E576E7C1D60A9DD009E2636 /* Cocoa.VP8-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Cocoa.VP8-iOS.xcodeproj"; sourceTree = "<group>"; };
+		8E576E871D60AC19009E2636 /* VideoConferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoConferenceManager.swift; path = RNIceLink/VideoConferenceManager.swift; sourceTree = "<group>"; };
 		8EA211061D609DC8003D2E6F /* FM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FM.h; path = libFM/FM.h; sourceTree = "<group>"; };
 		8EA211071D609DC8003D2E6F /* FMIceLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMIceLink.h; path = libFM/FMIceLink.h; sourceTree = "<group>"; };
 		8EA211081D609DC8003D2E6F /* FMIceLinkWebRTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMIceLinkWebRTC.h; path = libFM/FMIceLinkWebRTC.h; sourceTree = "<group>"; };
@@ -136,8 +158,11 @@
 		8EA2110B1D609DC8003D2E6F /* libFMIceLinkWebRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMIceLinkWebRTC.a; path = libFM/libFMIceLinkWebRTC.a; sourceTree = "<group>"; };
 		8EA2110F1D609EEC003D2E6F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		8EA211111D609F06003D2E6F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		8EA211271D60A041003D2E6F /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		8EA211281D60A041003D2E6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8EA211271D60A041003D2E6F /* RNIceLink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNIceLink-Bridging-Header.h"; sourceTree = "<group>"; };
+		8EA211281D60A041003D2E6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RNIceLink/AppDelegate.swift; sourceTree = "<group>"; };
+		8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReactNativeModule.m; path = RNIceLink/ReactNativeModule.m; sourceTree = "<group>"; };
+		8EB8AE121D60D99C00390F93 /* VideoConference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoConference.h; path = RNIceLink/VideoConference.h; sourceTree = "<group>"; };
+		8EB8AE131D60D9AE00390F93 /* VideoConference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoConference.m; path = RNIceLink/VideoConference.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +178,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E576E861D60AA04009E2636 /* libCocoa.Opus.a in Frameworks */,
+				8E576E851D60A9F3009E2636 /* libCocoa.VP8.a in Frameworks */,
 				8EA211121D609F06003D2E6F /* libz.tbd in Frameworks */,
 				8EA2110C1D609DC8003D2E6F /* libFM.a in Frameworks */,
 				8EA2110D1D609DC8003D2E6F /* libFMIceLink.a in Frameworks */,
@@ -251,8 +278,11 @@
 			isa = PBXGroup;
 			children = (
 				8EA2112A1D60A32B003D2E6F /* Resources */,
-				8EA211271D60A041003D2E6F /* Bridging-Header.h */,
+				8EB8AE151D60DAE200390F93 /* VideoConference */,
 				8EA211281D60A041003D2E6F /* AppDelegate.swift */,
+				8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */,
+				8EA211271D60A041003D2E6F /* RNIceLink-Bridging-Header.h */,
+				8E576E871D60AC19009E2636 /* VideoConferenceManager.swift */,
 			);
 			name = RNIceLink;
 			sourceTree = "<group>";
@@ -278,6 +308,8 @@
 			children = (
 				8EA2110F1D609EEC003D2E6F /* GLKit.framework */,
 				8EA211111D609F06003D2E6F /* libz.tbd */,
+				8E576E791D60A9DD009E2636 /* Cocoa.Opus-iOS.xcodeproj */,
+				8E576E7C1D60A9DD009E2636 /* Cocoa.VP8-iOS.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
 				00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */,
@@ -288,6 +320,7 @@
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
+				8EA210FB1D609DB9003D2E6F /* libFM */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -303,11 +336,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				8EA210FB1D609DB9003D2E6F /* FM */,
-				13B07FAE1A68108700A75B9A /* RNIceLink */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* RNIceLinkTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				13B07FAE1A68108700A75B9A /* RNIceLink */,
+				00E356EF1AD99517003FC87E /* RNIceLinkTests */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -322,7 +354,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8EA210FB1D609DB9003D2E6F /* FM */ = {
+		8E576E7A1D60A9DD009E2636 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E576E811D60A9DD009E2636 /* libCocoa.Opus.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E576E7D1D60A9DD009E2636 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E576E841D60A9DD009E2636 /* libCocoa.VP8.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EA210FB1D609DB9003D2E6F /* libFM */ = {
 			isa = PBXGroup;
 			children = (
 				8EA211091D609DC8003D2E6F /* libFM.a */,
@@ -332,18 +380,27 @@
 				8EA211071D609DC8003D2E6F /* FMIceLink.h */,
 				8EA211081D609DC8003D2E6F /* FMIceLinkWebRTC.h */,
 			);
-			name = FM;
+			name = libFM;
 			sourceTree = "<group>";
 		};
 		8EA2112A1D60A32B003D2E6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		8EB8AE151D60DAE200390F93 /* VideoConference */ = {
+			isa = PBXGroup;
+			children = (
+				8EB8AE121D60D99C00390F93 /* VideoConference.h */,
+				8EB8AE131D60D9AE00390F93 /* VideoConference.m */,
+			);
+			name = VideoConference;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +469,14 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 8E576E7A1D60A9DD009E2636 /* Products */;
+					ProjectRef = 8E576E791D60A9DD009E2636 /* Cocoa.Opus-iOS.xcodeproj */;
+				},
+				{
+					ProductGroup = 8E576E7D1D60A9DD009E2636 /* Products */;
+					ProjectRef = 8E576E7C1D60A9DD009E2636 /* Cocoa.VP8-iOS.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -532,6 +597,20 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		8E576E811D60A9DD009E2636 /* libCocoa.Opus.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoa.Opus.a;
+			remoteRef = 8E576E801D60A9DD009E2636 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8E576E841D60A9DD009E2636 /* libCocoa.VP8.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoa.VP8.a;
+			remoteRef = 8E576E831D60A9DD009E2636 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -584,6 +663,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA211291D60A041003D2E6F /* AppDelegate.swift in Sources */,
+				8E576E881D60AC19009E2636 /* VideoConferenceManager.swift in Sources */,
+				8EB8AE111D60D8A400390F93 /* ReactNativeModule.m in Sources */,
+				8EB8AE141D60D9AE00390F93 /* VideoConference.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,7 +747,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNIceLink;
-				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RNIceLink-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -693,7 +775,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNIceLink;
-				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "RNIceLink-Bridging-Header.h";
 			};
 			name = Release;
 		};
