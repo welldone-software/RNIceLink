@@ -62,6 +62,7 @@ static bool useWebSyncExtension = YES;
 
 - (void)attach:(FMIceLinkConference *)conference sessionId:(NSString *)sessionId callback:(void (^)(NSString *))callback
 {
+  _conference = conference;
   _sessionId = [sessionId copy];
 
   NSString *channel = [NSString stringWithFormat:@"/%@", _sessionId];
@@ -170,9 +171,7 @@ static bool useWebSyncExtension = YES;
     [leaveArgs setOnSuccessBlock:^(FMIceLinkWebSyncLeaveConferenceSuccessArgs *e)
      {
        _conference = nil;
-
        _sessionId = nil;
-
        callback(nil);
      }];
     [_websyncClient leaveConferenceWithArgs:leaveArgs];

@@ -3,13 +3,16 @@ import Foundation
 @objc(IceLinkConferenceManager)
 class IceLinkConferenceManager: RCTViewManager {
   @IBOutlet var videoContainer: UIView!
+
   let iceLinkConfrence = IceLinkConference()
 
   override init() {
     super.init()
     NSBundle.mainBundle().loadNibNamed("VideoContainer", owner: self, options: nil)
+    iceLinkConfrence.sessionId = "090909"
     startSignalling()
     startLocalMedia()
+    startConference()
   }
 
   func startSignalling() {

@@ -112,8 +112,9 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   [_videoStream addOnLinkDown:_removeRemoteVideoControlEvent];
 
   // Create a conference using our stream descriptions.
-  _conference = [[FMIceLinkConference alloc] initWithServerAddress:icelinkServerAddress
-                                                           streams:[NSMutableArray arrayWithObjects:_audioStream, _videoStream, nil]];
+  _conference = [[FMIceLinkConference alloc]
+                 initWithServerAddress:icelinkServerAddress
+                 streams:[NSMutableArray arrayWithObjects:_audioStream, _videoStream, nil]];
 
   // Use our pre-generated DTLS certificate.
   [_conference setDtlsCertificate:_certificate];
