@@ -6,7 +6,7 @@
 #import "libFM/FMIceLink.h"
 #import "libFM/FMIceLinkWebRTC.h"
 
-#import "RNIceLink/Codecs/OpusCodec.h"
-#import "RNIceLink/Codecs/Vp8Codec.h"
+#import "RNIceLink/V8/Vp8Codec.h"
+#import "RNIceLink/Opus/OpusCodec.h"
 
 #import "VideoConference.h"

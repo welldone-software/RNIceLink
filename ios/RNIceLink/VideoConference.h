@@ -15,7 +15,7 @@
 #import "Signalling.h"
 #import "LocalMedia.h"
 
-@interface App : NSObject
+@interface VideoConference : NSObject
 {
   LocalMedia *_localMedia;
   Signalling *_signalling;
@@ -38,7 +38,7 @@
 
 @property (nonatomic, retain) NSString *sessionId;
 
-+ (App *)instance;
++ (VideoConference *)instance;
 
 - (void)startSignalling:(void (^)(NSString *))callback;
 - (void)stopSignalling:(void (^)(NSString *))callback;

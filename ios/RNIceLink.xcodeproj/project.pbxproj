@@ -32,6 +32,15 @@
 		8EA211291D60A041003D2E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA211281D60A041003D2E6F /* AppDelegate.swift */; };
 		8EB8AE111D60D8A400390F93 /* ReactNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */; };
 		8EB8AE141D60D9AE00390F93 /* VideoConference.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE131D60D9AE00390F93 /* VideoConference.m */; };
+		8EB8AE1A1D60DC3C00390F93 /* LocalMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE171D60DC3C00390F93 /* LocalMedia.m */; };
+		8EB8AE1B1D60DC3C00390F93 /* Signalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE191D60DC3C00390F93 /* Signalling.m */; };
+		8EB8AE261D60DD0300390F93 /* libFMIceLinkSimple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE211D60DD0300390F93 /* libFMIceLinkSimple.a */; };
+		8EB8AE271D60DD0300390F93 /* libFMIceLinkWebSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE221D60DD0300390F93 /* libFMIceLinkWebSync.a */; };
+		8EB8AE281D60DD0300390F93 /* libFMWebSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE231D60DD0300390F93 /* libFMWebSync.a */; };
+		8EB8AE291D60DD0300390F93 /* libFMWebSyncChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE241D60DD0300390F93 /* libFMWebSyncChat.a */; };
+		8EB8AE2A1D60DD0300390F93 /* libFMWebSyncSubscribers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE251D60DD0300390F93 /* libFMWebSyncSubscribers.a */; };
+		8EB8AE311D60DFCE00390F93 /* OpusCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE301D60DFCE00390F93 /* OpusCodec.m */; };
+		8EB8AE381D60DFF300390F93 /* Vp8Codec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE371D60DFF300390F93 /* Vp8Codec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +172,30 @@
 		8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReactNativeModule.m; path = RNIceLink/ReactNativeModule.m; sourceTree = "<group>"; };
 		8EB8AE121D60D99C00390F93 /* VideoConference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoConference.h; path = RNIceLink/VideoConference.h; sourceTree = "<group>"; };
 		8EB8AE131D60D9AE00390F93 /* VideoConference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoConference.m; path = RNIceLink/VideoConference.m; sourceTree = "<group>"; };
+		8EB8AE161D60DC3C00390F93 /* LocalMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalMedia.h; sourceTree = "<group>"; };
+		8EB8AE171D60DC3C00390F93 /* LocalMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalMedia.m; sourceTree = "<group>"; };
+		8EB8AE181D60DC3C00390F93 /* Signalling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signalling.h; sourceTree = "<group>"; };
+		8EB8AE191D60DC3C00390F93 /* Signalling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Signalling.m; sourceTree = "<group>"; };
+		8EB8AE1C1D60DD0300390F93 /* FMIceLinkSimple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMIceLinkSimple.h; path = libFM/FMIceLinkSimple.h; sourceTree = "<group>"; };
+		8EB8AE1D1D60DD0300390F93 /* FMIceLinkWebSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMIceLinkWebSync.h; path = libFM/FMIceLinkWebSync.h; sourceTree = "<group>"; };
+		8EB8AE1E1D60DD0300390F93 /* FMWebSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMWebSync.h; path = libFM/FMWebSync.h; sourceTree = "<group>"; };
+		8EB8AE1F1D60DD0300390F93 /* FMWebSyncChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMWebSyncChat.h; path = libFM/FMWebSyncChat.h; sourceTree = "<group>"; };
+		8EB8AE201D60DD0300390F93 /* FMWebSyncSubscribers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMWebSyncSubscribers.h; path = libFM/FMWebSyncSubscribers.h; sourceTree = "<group>"; };
+		8EB8AE211D60DD0300390F93 /* libFMIceLinkSimple.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMIceLinkSimple.a; path = libFM/libFMIceLinkSimple.a; sourceTree = "<group>"; };
+		8EB8AE221D60DD0300390F93 /* libFMIceLinkWebSync.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMIceLinkWebSync.a; path = libFM/libFMIceLinkWebSync.a; sourceTree = "<group>"; };
+		8EB8AE231D60DD0300390F93 /* libFMWebSync.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMWebSync.a; path = libFM/libFMWebSync.a; sourceTree = "<group>"; };
+		8EB8AE241D60DD0300390F93 /* libFMWebSyncChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMWebSyncChat.a; path = libFM/libFMWebSyncChat.a; sourceTree = "<group>"; };
+		8EB8AE251D60DD0300390F93 /* libFMWebSyncSubscribers.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMWebSyncSubscribers.a; path = libFM/libFMWebSyncSubscribers.a; sourceTree = "<group>"; };
+		8EB8AE2C1D60DFCE00390F93 /* CocoaOpusBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaOpusBuffer.h; path = RNIceLink/Opus/CocoaOpusBuffer.h; sourceTree = "<group>"; };
+		8EB8AE2D1D60DFCE00390F93 /* CocoaOpusDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaOpusDecoder.h; path = RNIceLink/Opus/CocoaOpusDecoder.h; sourceTree = "<group>"; };
+		8EB8AE2E1D60DFCE00390F93 /* CocoaOpusEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaOpusEncoder.h; path = RNIceLink/Opus/CocoaOpusEncoder.h; sourceTree = "<group>"; };
+		8EB8AE2F1D60DFCE00390F93 /* OpusCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpusCodec.h; path = RNIceLink/Opus/OpusCodec.h; sourceTree = "<group>"; };
+		8EB8AE301D60DFCE00390F93 /* OpusCodec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OpusCodec.m; path = RNIceLink/Opus/OpusCodec.m; sourceTree = "<group>"; };
+		8EB8AE331D60DFF300390F93 /* CocoaVp8Buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaVp8Buffer.h; path = RNIceLink/V8/CocoaVp8Buffer.h; sourceTree = "<group>"; };
+		8EB8AE341D60DFF300390F93 /* CocoaVp8Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaVp8Decoder.h; path = RNIceLink/V8/CocoaVp8Decoder.h; sourceTree = "<group>"; };
+		8EB8AE351D60DFF300390F93 /* CocoaVp8Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaVp8Encoder.h; path = RNIceLink/V8/CocoaVp8Encoder.h; sourceTree = "<group>"; };
+		8EB8AE361D60DFF300390F93 /* Vp8Codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vp8Codec.h; path = RNIceLink/V8/Vp8Codec.h; sourceTree = "<group>"; };
+		8EB8AE371D60DFF300390F93 /* Vp8Codec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vp8Codec.m; path = RNIceLink/V8/Vp8Codec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,18 +211,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB8AE261D60DD0300390F93 /* libFMIceLinkSimple.a in Frameworks */,
 				8E576E861D60AA04009E2636 /* libCocoa.Opus.a in Frameworks */,
 				8E576E851D60A9F3009E2636 /* libCocoa.VP8.a in Frameworks */,
 				8EA211121D609F06003D2E6F /* libz.tbd in Frameworks */,
 				8EA2110C1D609DC8003D2E6F /* libFM.a in Frameworks */,
+				8EB8AE271D60DD0300390F93 /* libFMIceLinkWebSync.a in Frameworks */,
 				8EA2110D1D609DC8003D2E6F /* libFMIceLink.a in Frameworks */,
 				8EA2110E1D609DC8003D2E6F /* libFMIceLinkWebRTC.a in Frameworks */,
 				8EA211101D609EEC003D2E6F /* GLKit.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
+				8EB8AE2A1D60DD0300390F93 /* libFMWebSyncSubscribers.a in Frameworks */,
+				8EB8AE281D60DD0300390F93 /* libFMWebSync.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
+				8EB8AE291D60DD0300390F93 /* libFMWebSyncChat.a in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
@@ -277,6 +315,8 @@
 		13B07FAE1A68108700A75B9A /* RNIceLink */ = {
 			isa = PBXGroup;
 			children = (
+				8EB8AE321D60DFD300390F93 /* V8 */,
+				8EB8AE2B1D60DF8900390F93 /* Opus */,
 				8EA2112A1D60A32B003D2E6F /* Resources */,
 				8EB8AE151D60DAE200390F93 /* VideoConference */,
 				8EA211281D60A041003D2E6F /* AppDelegate.swift */,
@@ -375,10 +415,20 @@
 			children = (
 				8EA211091D609DC8003D2E6F /* libFM.a */,
 				8EA2110A1D609DC8003D2E6F /* libFMIceLink.a */,
+				8EB8AE211D60DD0300390F93 /* libFMIceLinkSimple.a */,
 				8EA2110B1D609DC8003D2E6F /* libFMIceLinkWebRTC.a */,
+				8EB8AE221D60DD0300390F93 /* libFMIceLinkWebSync.a */,
+				8EB8AE231D60DD0300390F93 /* libFMWebSync.a */,
+				8EB8AE241D60DD0300390F93 /* libFMWebSyncChat.a */,
+				8EB8AE251D60DD0300390F93 /* libFMWebSyncSubscribers.a */,
 				8EA211061D609DC8003D2E6F /* FM.h */,
 				8EA211071D609DC8003D2E6F /* FMIceLink.h */,
+				8EB8AE1C1D60DD0300390F93 /* FMIceLinkSimple.h */,
 				8EA211081D609DC8003D2E6F /* FMIceLinkWebRTC.h */,
+				8EB8AE1D1D60DD0300390F93 /* FMIceLinkWebSync.h */,
+				8EB8AE1E1D60DD0300390F93 /* FMWebSync.h */,
+				8EB8AE1F1D60DD0300390F93 /* FMWebSyncChat.h */,
+				8EB8AE201D60DD0300390F93 /* FMWebSyncSubscribers.h */,
 			);
 			name = libFM;
 			sourceTree = "<group>";
@@ -397,10 +447,38 @@
 		8EB8AE151D60DAE200390F93 /* VideoConference */ = {
 			isa = PBXGroup;
 			children = (
+				8EB8AE161D60DC3C00390F93 /* LocalMedia.h */,
+				8EB8AE171D60DC3C00390F93 /* LocalMedia.m */,
+				8EB8AE181D60DC3C00390F93 /* Signalling.h */,
+				8EB8AE191D60DC3C00390F93 /* Signalling.m */,
 				8EB8AE121D60D99C00390F93 /* VideoConference.h */,
 				8EB8AE131D60D9AE00390F93 /* VideoConference.m */,
 			);
 			name = VideoConference;
+			sourceTree = "<group>";
+		};
+		8EB8AE2B1D60DF8900390F93 /* Opus */ = {
+			isa = PBXGroup;
+			children = (
+				8EB8AE2C1D60DFCE00390F93 /* CocoaOpusBuffer.h */,
+				8EB8AE2D1D60DFCE00390F93 /* CocoaOpusDecoder.h */,
+				8EB8AE2E1D60DFCE00390F93 /* CocoaOpusEncoder.h */,
+				8EB8AE2F1D60DFCE00390F93 /* OpusCodec.h */,
+				8EB8AE301D60DFCE00390F93 /* OpusCodec.m */,
+			);
+			name = Opus;
+			sourceTree = "<group>";
+		};
+		8EB8AE321D60DFD300390F93 /* V8 */ = {
+			isa = PBXGroup;
+			children = (
+				8EB8AE331D60DFF300390F93 /* CocoaVp8Buffer.h */,
+				8EB8AE341D60DFF300390F93 /* CocoaVp8Decoder.h */,
+				8EB8AE351D60DFF300390F93 /* CocoaVp8Encoder.h */,
+				8EB8AE361D60DFF300390F93 /* Vp8Codec.h */,
+				8EB8AE371D60DFF300390F93 /* Vp8Codec.m */,
+			);
+			name = V8;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -663,9 +741,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA211291D60A041003D2E6F /* AppDelegate.swift in Sources */,
+				8EB8AE381D60DFF300390F93 /* Vp8Codec.m in Sources */,
 				8E576E881D60AC19009E2636 /* VideoConferenceManager.swift in Sources */,
 				8EB8AE111D60D8A400390F93 /* ReactNativeModule.m in Sources */,
+				8EB8AE311D60DFCE00390F93 /* OpusCodec.m in Sources */,
 				8EB8AE141D60D9AE00390F93 /* VideoConference.m in Sources */,
+				8EB8AE1A1D60DC3C00390F93 /* LocalMedia.m in Sources */,
+				8EB8AE1B1D60DC3C00390F93 /* Signalling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

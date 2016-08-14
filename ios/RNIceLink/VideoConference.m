@@ -10,18 +10,17 @@
 
 #import "OpusCodec.h"
 #import "Vp8Codec.h"
-#import "UIView+Toast.h"
 
-@implementation App
+@implementation VideoConference
 
 static NSString *icelinkServerAddress = @"demo.icelink.fm:3478";
 static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // WebSync On-Demand
 
 @synthesize sessionId = _sessionId;
 
-+ (App *)instance
++ (VideoConference *)instance
 {
-  static App *instance = nil;
+  static VideoConference *instance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];
@@ -42,7 +41,7 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
     // This is required when using a WebRTC video stream.
     [FMIceLinkWebRTCVideoStream registerCodecWithEncodingName:@"VP8" createCodecBlock:^()
      {
-       return [[[Vp8Codec alloc] init] autorelease];
+       return [[Vp8Codec alloc] init];
      } preferred:YES];
 
     // For improved audio quality, we can use Opus. By
@@ -50,37 +49,20 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
     // override the default PCMU/PCMA codecs.
     [FMIceLinkWebRTCAudioStream registerCodecWithEncodingName:@"opus" clockRate:48000 channels:2 createCodecBlock:^
      {
-       return [[[OpusCodec alloc] init] autorelease];
+       return [[OpusCodec alloc] init];
      } preferred:YES];
 
     // To save time, generate a DTLS certificate when the
     // app starts and reuse it for multiple conferences.
-    _certificate = [[FMIceLinkCertificate generateCertificate] retain];
+    _certificate = [FMIceLinkCertificate generateCertificate];
 
-    _addRemoteVideoControlEvent = [[FMCallback callback:@selector(addRemoteVideoControl:) target:self] retain];
-    _removeRemoteVideoControlEvent = [[FMCallback callback:@selector(removeRemoteVideoControl:) target:self] retain];
-    _logLinkInitEvent = [[FMCallback callback:@selector(logLinkInit:) target:self] retain];
-    _logLinkUpEvent = [[FMCallback callback:@selector(logLinkUp:) target:self] retain];
-    _logLinkDownEvent = [[FMCallback callback:@selector(logLinkDown:) target:self] retain];
+    _addRemoteVideoControlEvent = [FMCallback callback:@selector(addRemoteVideoControl:) target:self];
+    _removeRemoteVideoControlEvent = [FMCallback callback:@selector(removeRemoteVideoControl:) target:self];
+    _logLinkInitEvent = [FMCallback callback:@selector(logLinkInit:) target:self];
+    _logLinkUpEvent = [FMCallback callback:@selector(logLinkUp:) target:self];
+    _logLinkDownEvent = [FMCallback callback:@selector(logLinkDown:) target:self];
   }
   return self;
-}
-
-- (void)dealloc
-{
-  [_localMedia release];
-  [_signalling release];
-  [_audioStream release];
-  [_videoStream release];
-  [_conference release];
-  [_sessionId release];
-  [_certificate release];
-  [_addRemoteVideoControlEvent release];
-  [_removeRemoteVideoControlEvent release];
-  [_logLinkInitEvent release];
-  [_logLinkUpEvent release];
-  [_logLinkDownEvent release];
-  [super dealloc];
 }
 
 - (void)startSignalling:(void (^)(NSString *))callback
@@ -94,7 +76,6 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   if (_signalling)
   {
     [_signalling stop:callback];
-    [_signalling release];
     _signalling = nil;
   }
   else
@@ -114,7 +95,6 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   if (_localMedia)
   {
     [_localMedia stop:callback];
-    [_localMedia release];
     _localMedia = nil;
   }
   else
@@ -196,17 +176,12 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
      [_conference removeOnLinkInit:_logLinkInitEvent];
      [_conference removeOnLinkUp:_logLinkUpEvent];
      [_conference removeOnLinkDown:_logLinkDownEvent];
-     [_conference release];
      _conference = nil;
 
      [_videoStream removeOnLinkInit:_addRemoteVideoControlEvent];
      [_videoStream removeOnLinkDown:_removeRemoteVideoControlEvent];
-     [_videoStream release];
      _videoStream = nil;
-
-     [_audioStream release];
      _audioStream = nil;
-
      callback(error);
    }];
 }
