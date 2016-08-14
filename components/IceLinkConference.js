@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, StyleSheet, requireNativeComponent } from 'react-native'
+import { StyleSheet, requireNativeComponent } from 'react-native'
 
 const IceLinkConferenceView = requireNativeComponent('IceLinkConference', null)
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'black',
   },
 })
 
@@ -15,11 +16,8 @@ export class IceLinkConference extends React.Component {
   }
 
   render() {
-    return (<View style={styles.container}>
-      <IceLinkConferenceView />
-    </View>)
+    return (<IceLinkConferenceView style={styles.container} />)
   }
 }
 
-IceLinkConference.propTypes = {
-}
+IceLinkConference.propTypes = {}

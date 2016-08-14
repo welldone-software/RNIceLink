@@ -41,6 +41,7 @@
 		8EB8AE2A1D60DD0300390F93 /* libFMWebSyncSubscribers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE251D60DD0300390F93 /* libFMWebSyncSubscribers.a */; };
 		8EB8AE311D60DFCE00390F93 /* OpusCodec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE301D60DFCE00390F93 /* OpusCodec.m */; };
 		8EB8AE381D60DFF300390F93 /* Vp8Codec.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE371D60DFF300390F93 /* Vp8Codec.m */; };
+		8EB8AE4B1D60F7F300390F93 /* VideoContainer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EB8AE491D60F7F300390F93 /* VideoContainer.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +197,7 @@
 		8EB8AE351D60DFF300390F93 /* CocoaVp8Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CocoaVp8Encoder.h; path = RNIceLink/V8/CocoaVp8Encoder.h; sourceTree = "<group>"; };
 		8EB8AE361D60DFF300390F93 /* Vp8Codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vp8Codec.h; path = RNIceLink/V8/Vp8Codec.h; sourceTree = "<group>"; };
 		8EB8AE371D60DFF300390F93 /* Vp8Codec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Vp8Codec.m; path = RNIceLink/V8/Vp8Codec.m; sourceTree = "<group>"; };
+		8EB8AE4A1D60F7F300390F93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = RNIceLink/Base.lproj/VideoContainer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +442,7 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				8EB8AE491D60F7F300390F93 /* VideoContainer.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -703,6 +706,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EB8AE4B1D60F7F300390F93 /* VideoContainer.xib in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
@@ -769,6 +773,14 @@
 			);
 			name = LaunchScreen.xib;
 			path = RNIceLink;
+			sourceTree = "<group>";
+		};
+		8EB8AE491D60F7F300390F93 /* VideoContainer.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8EB8AE4A1D60F7F300390F93 /* Base */,
+			);
+			name = VideoContainer.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

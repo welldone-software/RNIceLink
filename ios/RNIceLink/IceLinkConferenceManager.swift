@@ -2,42 +2,61 @@ import Foundation
 
 @objc(IceLinkConferenceManager)
 class IceLinkConferenceManager: RCTViewManager {
-  let videoContainer = UIView()
+  @IBOutlet var videoContainer: UIView!
   let iceLinkConfrence = IceLinkConference()
+
+  override init() {
+    super.init()
+    NSBundle.mainBundle().loadNibNamed("VideoContainer", owner: self, options: nil)
+    startSignalling()
+    startLocalMedia()
+  }
 
   func startSignalling() {
     iceLinkConfrence.startSignalling { message in
-      NSLog("startSignalling failed. error (@)", message)
+      if let message = message {
+        NSLog("startSignalling failed. error (%@)", message)
+      }
     }
   }
 
   func stopSignalling() {
     iceLinkConfrence.stopSignalling { message in
-      NSLog("stopSignalling failed. error (@)", message)
+      if let message = message {
+        NSLog("stopSignalling failed. error (%@)", message)
+      }
     }
   }
 
   func startLocalMedia() {
     iceLinkConfrence.startLocalMedia(videoContainer) { message in
-      NSLog("startLocalMedia failed. error (@)", message)
+      if let message = message {
+        NSLog("startLocalMedia failed. error (%@)", message)
+      }
     }
   }
 
   func stopLocalMedia() {
     iceLinkConfrence.stopLocalMedia { message in
-      NSLog("stopLocalMedia failed. error (@)", message)
+      if let message = message {
+        NSLog("stopLocalMedia failed. error (%@)", message)
+      }
     }
   }
 
   func startConference() {
     iceLinkConfrence.startConference { message in
-      NSLog("startConference failed. error (@)", message)
+      if let message = message {
+        NSLog("startConference failed. error (%@)", message)
+      }
     }
   }
 
   func stopConference() {
     iceLinkConfrence.stopConference { message in
-      NSLog("stopConference failed. error (@)", message)
+      if let message = message {
+        NSLog("stopConference failed. error (%@)", message)
+      }
     }
   }
 
