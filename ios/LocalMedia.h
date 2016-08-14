@@ -14,8 +14,8 @@
 
 @interface LocalMedia : NSObject
 {
-    FMIceLinkWebRTCLocalMediaStream *_localMediaStream;
-    FMIceLinkWebRTCLayoutManager *_layoutManager;
+  FMIceLinkWebRTCLocalMediaStream *_localMediaStream;
+  FMIceLinkWebRTCLayoutManager *_layoutManager;
 }
 
 @property (nonatomic, retain) FMIceLinkWebRTCLocalMediaStream *localMediaStream;

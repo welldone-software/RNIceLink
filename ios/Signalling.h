@@ -23,20 +23,20 @@
 // peers as quickly as possible. This is called "signalling".
 @interface Signalling : NSObject
 {
-    // We're going to use WebSync for this example, but any real-time
-    // messaging system will do (like SIP or XMPP). We use WebSync
-    // since it works well with JavaScript and uses HTTP, which is
-    // widely allowed. To use something else, simply replace the calls
-    // to WebSync with calls to your library.
-    NSString *_websyncServerUrl;
-    FMWebSyncClient *_websyncClient;
-    
-    FMIceLinkConference *_conference;
-    NSString *_sessionId;
-    
-    FMCallback *_sendOfferAnswerEvent;
-    FMCallback *_sendCandidateEvent;
-    FMCallback *_receiveOfferAnswerOrCandidateEvent;
+  // We're going to use WebSync for this example, but any real-time
+  // messaging system will do (like SIP or XMPP). We use WebSync
+  // since it works well with JavaScript and uses HTTP, which is
+  // widely allowed. To use something else, simply replace the calls
+  // to WebSync with calls to your library.
+  NSString *_websyncServerUrl;
+  FMWebSyncClient *_websyncClient;
+
+  FMIceLinkConference *_conference;
+  NSString *_sessionId;
+
+  FMCallback *_sendOfferAnswerEvent;
+  FMCallback *_sendCandidateEvent;
+  FMCallback *_receiveOfferAnswerOrCandidateEvent;
 }
 
 - (id)initWithWebSyncServerUrl:(NSString *)websyncServerUrl;

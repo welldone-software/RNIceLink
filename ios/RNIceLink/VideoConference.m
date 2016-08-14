@@ -1,11 +1,3 @@
-//
-//  App.m
-//  iOS.Conference.WebRTC
-//
-//  Created by Adrian Mercado on 2014-06-09.
-//  Copyright (c) 2014 Frozen Mountain Software. All rights reserved.
-//
-
 #import "VideoConference.h"
 
 #import "OpusCodec.h"
