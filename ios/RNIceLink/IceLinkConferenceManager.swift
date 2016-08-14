@@ -1,59 +1,56 @@
 import Foundation
 
-@objc(VideoConferenceManager)
-class VideoConferenceManager: RCTViewManager {
+@objc(IceLinkConferenceManager)
+class IceLinkConferenceManager: RCTViewManager {
   let videoContainer = UIView()
-  let videoConfrence = VideoConference()
-
-  override init() {
-  }
+  let iceLinkConfrence = IceLinkConference()
 
   func startSignalling() {
-    videoConfrence.startSignalling { message in
+    iceLinkConfrence.startSignalling { message in
       NSLog("startSignalling failed. error (@)", message)
     }
   }
 
   func stopSignalling() {
-    videoConfrence.stopSignalling { message in
+    iceLinkConfrence.stopSignalling { message in
       NSLog("stopSignalling failed. error (@)", message)
     }
   }
 
   func startLocalMedia() {
-    videoConfrence.startLocalMedia(videoContainer) { message in
+    iceLinkConfrence.startLocalMedia(videoContainer) { message in
       NSLog("startLocalMedia failed. error (@)", message)
     }
   }
 
   func stopLocalMedia() {
-    videoConfrence.stopLocalMedia { message in
+    iceLinkConfrence.stopLocalMedia { message in
       NSLog("stopLocalMedia failed. error (@)", message)
     }
   }
 
   func startConference() {
-    videoConfrence.startConference { message in
+    iceLinkConfrence.startConference { message in
       NSLog("startConference failed. error (@)", message)
     }
   }
 
   func stopConference() {
-    videoConfrence.stopConference { message in
+    iceLinkConfrence.stopConference { message in
       NSLog("stopConference failed. error (@)", message)
     }
   }
 
   func useNextVideoDevice() {
-    videoConfrence.useNextVideoDevice()
+    iceLinkConfrence.useNextVideoDevice()
   }
 
   func pauseAudio() {
-    videoConfrence.pauseAudio()
+    iceLinkConfrence.pauseAudio()
   }
 
   func resumeAudio() {
-    videoConfrence.resumeAudio()
+    iceLinkConfrence.resumeAudio()
   }
 
   override func view() -> UIView {

@@ -9,4 +9,4 @@
 #import "RNIceLink/V8/Vp8Codec.h"
 #import "RNIceLink/Opus/OpusCodec.h"
 
-#import "VideoConference.h"
+#import "IceLinkConference.h"

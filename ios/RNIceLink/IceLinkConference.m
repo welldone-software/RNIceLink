@@ -1,18 +1,18 @@
-#import "VideoConference.h"
+#import "IceLinkConference.h"
 
 #import "OpusCodec.h"
 #import "Vp8Codec.h"
 
-@implementation VideoConference
+@implementation IceLinkConference
 
 static NSString *icelinkServerAddress = @"demo.icelink.fm:3478";
 static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // WebSync On-Demand
 
 @synthesize sessionId = _sessionId;
 
-+ (VideoConference *)instance
++ (IceLinkConference *)instance
 {
-  static VideoConference *instance = nil;
+  static IceLinkConference *instance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[self alloc] init];

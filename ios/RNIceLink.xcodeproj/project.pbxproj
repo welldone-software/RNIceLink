@@ -23,7 +23,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8E576E851D60A9F3009E2636 /* libCocoa.VP8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E576E841D60A9DD009E2636 /* libCocoa.VP8.a */; };
 		8E576E861D60AA04009E2636 /* libCocoa.Opus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E576E811D60A9DD009E2636 /* libCocoa.Opus.a */; };
-		8E576E881D60AC19009E2636 /* VideoConferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E576E871D60AC19009E2636 /* VideoConferenceManager.swift */; };
+		8E576E881D60AC19009E2636 /* IceLinkConferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E576E871D60AC19009E2636 /* IceLinkConferenceManager.swift */; };
 		8EA2110C1D609DC8003D2E6F /* libFM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA211091D609DC8003D2E6F /* libFM.a */; };
 		8EA2110D1D609DC8003D2E6F /* libFMIceLink.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA2110A1D609DC8003D2E6F /* libFMIceLink.a */; };
 		8EA2110E1D609DC8003D2E6F /* libFMIceLinkWebRTC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA2110B1D609DC8003D2E6F /* libFMIceLinkWebRTC.a */; };
@@ -31,7 +31,7 @@
 		8EA211121D609F06003D2E6F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EA211111D609F06003D2E6F /* libz.tbd */; };
 		8EA211291D60A041003D2E6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA211281D60A041003D2E6F /* AppDelegate.swift */; };
 		8EB8AE111D60D8A400390F93 /* ReactNativeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */; };
-		8EB8AE141D60D9AE00390F93 /* VideoConference.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE131D60D9AE00390F93 /* VideoConference.m */; };
+		8EB8AE141D60D9AE00390F93 /* IceLinkConference.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE131D60D9AE00390F93 /* IceLinkConference.m */; };
 		8EB8AE1A1D60DC3C00390F93 /* LocalMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE171D60DC3C00390F93 /* LocalMedia.m */; };
 		8EB8AE1B1D60DC3C00390F93 /* Signalling.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EB8AE191D60DC3C00390F93 /* Signalling.m */; };
 		8EB8AE261D60DD0300390F93 /* libFMIceLinkSimple.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EB8AE211D60DD0300390F93 /* libFMIceLinkSimple.a */; };
@@ -158,7 +158,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8E576E791D60A9DD009E2636 /* Cocoa.Opus-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Cocoa.Opus-iOS.xcodeproj"; sourceTree = "<group>"; };
 		8E576E7C1D60A9DD009E2636 /* Cocoa.VP8-iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "Cocoa.VP8-iOS.xcodeproj"; sourceTree = "<group>"; };
-		8E576E871D60AC19009E2636 /* VideoConferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoConferenceManager.swift; path = RNIceLink/VideoConferenceManager.swift; sourceTree = "<group>"; };
+		8E576E871D60AC19009E2636 /* IceLinkConferenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IceLinkConferenceManager.swift; path = RNIceLink/IceLinkConferenceManager.swift; sourceTree = "<group>"; };
 		8EA211061D609DC8003D2E6F /* FM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FM.h; path = libFM/FM.h; sourceTree = "<group>"; };
 		8EA211071D609DC8003D2E6F /* FMIceLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMIceLink.h; path = libFM/FMIceLink.h; sourceTree = "<group>"; };
 		8EA211081D609DC8003D2E6F /* FMIceLinkWebRTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMIceLinkWebRTC.h; path = libFM/FMIceLinkWebRTC.h; sourceTree = "<group>"; };
@@ -170,8 +170,8 @@
 		8EA211271D60A041003D2E6F /* RNIceLink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNIceLink-Bridging-Header.h"; sourceTree = "<group>"; };
 		8EA211281D60A041003D2E6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = RNIceLink/AppDelegate.swift; sourceTree = "<group>"; };
 		8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReactNativeModule.m; path = RNIceLink/ReactNativeModule.m; sourceTree = "<group>"; };
-		8EB8AE121D60D99C00390F93 /* VideoConference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoConference.h; path = RNIceLink/VideoConference.h; sourceTree = "<group>"; };
-		8EB8AE131D60D9AE00390F93 /* VideoConference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoConference.m; path = RNIceLink/VideoConference.m; sourceTree = "<group>"; };
+		8EB8AE121D60D99C00390F93 /* IceLinkConference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IceLinkConference.h; path = RNIceLink/IceLinkConference.h; sourceTree = "<group>"; };
+		8EB8AE131D60D9AE00390F93 /* IceLinkConference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IceLinkConference.m; path = RNIceLink/IceLinkConference.m; sourceTree = "<group>"; };
 		8EB8AE161D60DC3C00390F93 /* LocalMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalMedia.h; sourceTree = "<group>"; };
 		8EB8AE171D60DC3C00390F93 /* LocalMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalMedia.m; sourceTree = "<group>"; };
 		8EB8AE181D60DC3C00390F93 /* Signalling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Signalling.h; sourceTree = "<group>"; };
@@ -318,11 +318,11 @@
 				8EB8AE321D60DFD300390F93 /* V8 */,
 				8EB8AE2B1D60DF8900390F93 /* Opus */,
 				8EA2112A1D60A32B003D2E6F /* Resources */,
-				8EB8AE151D60DAE200390F93 /* VideoConference */,
+				8EB8AE151D60DAE200390F93 /* Conference */,
 				8EA211281D60A041003D2E6F /* AppDelegate.swift */,
 				8EB8AE101D60D8A400390F93 /* ReactNativeModule.m */,
 				8EA211271D60A041003D2E6F /* RNIceLink-Bridging-Header.h */,
-				8E576E871D60AC19009E2636 /* VideoConferenceManager.swift */,
+				8E576E871D60AC19009E2636 /* IceLinkConferenceManager.swift */,
 			);
 			name = RNIceLink;
 			sourceTree = "<group>";
@@ -444,17 +444,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		8EB8AE151D60DAE200390F93 /* VideoConference */ = {
+		8EB8AE151D60DAE200390F93 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
 				8EB8AE161D60DC3C00390F93 /* LocalMedia.h */,
 				8EB8AE171D60DC3C00390F93 /* LocalMedia.m */,
 				8EB8AE181D60DC3C00390F93 /* Signalling.h */,
 				8EB8AE191D60DC3C00390F93 /* Signalling.m */,
-				8EB8AE121D60D99C00390F93 /* VideoConference.h */,
-				8EB8AE131D60D9AE00390F93 /* VideoConference.m */,
+				8EB8AE121D60D99C00390F93 /* IceLinkConference.h */,
+				8EB8AE131D60D9AE00390F93 /* IceLinkConference.m */,
 			);
-			name = VideoConference;
+			name = Conference;
 			sourceTree = "<group>";
 		};
 		8EB8AE2B1D60DF8900390F93 /* Opus */ = {
@@ -742,10 +742,10 @@
 			files = (
 				8EA211291D60A041003D2E6F /* AppDelegate.swift in Sources */,
 				8EB8AE381D60DFF300390F93 /* Vp8Codec.m in Sources */,
-				8E576E881D60AC19009E2636 /* VideoConferenceManager.swift in Sources */,
+				8E576E881D60AC19009E2636 /* IceLinkConferenceManager.swift in Sources */,
 				8EB8AE111D60D8A400390F93 /* ReactNativeModule.m in Sources */,
 				8EB8AE311D60DFCE00390F93 /* OpusCodec.m in Sources */,
-				8EB8AE141D60D9AE00390F93 /* VideoConference.m in Sources */,
+				8EB8AE141D60D9AE00390F93 /* IceLinkConference.m in Sources */,
 				8EB8AE1A1D60DC3C00390F93 /* LocalMedia.m in Sources */,
 				8EB8AE1B1D60DC3C00390F93 /* Signalling.m in Sources */,
 			);

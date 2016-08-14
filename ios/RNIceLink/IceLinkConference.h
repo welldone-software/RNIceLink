@@ -7,7 +7,7 @@
 #import "Signalling.h"
 #import "LocalMedia.h"
 
-@interface VideoConference : NSObject
+@interface IceLinkConference : NSObject
 {
   LocalMedia *_localMedia;
   Signalling *_signalling;
@@ -30,7 +30,7 @@
 
 @property (nonatomic, retain) NSString *sessionId;
 
-+ (VideoConference *)instance;
++ (IceLinkConference *)instance;
 
 - (void)startSignalling:(void (^)(NSString *))callback;
 - (void)stopSignalling:(void (^)(NSString *))callback;
