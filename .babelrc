@@ -3,7 +3,7 @@
   "plugins": [
     [
       "module-alias", [
-      {"src": "./", "expose": "jivri"},
+      {"src": "./", "expose": "RNIceLink"},
       {"src": "./app", "expose": "app"},
       {"src": "./styles", "expose": "styles"},
       {"src": "./components", "expose": "components"},
