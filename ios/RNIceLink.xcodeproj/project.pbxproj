@@ -136,7 +136,7 @@
 		8EA2110B1D609DC8003D2E6F /* libFMIceLinkWebRTC.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFMIceLinkWebRTC.a; path = libFM/libFMIceLinkWebRTC.a; sourceTree = "<group>"; };
 		8EA2110F1D609EEC003D2E6F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		8EA211111D609F06003D2E6F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		8EA211271D60A041003D2E6F /* RNIceLink-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNIceLink-Bridging-Header.h"; sourceTree = "<group>"; };
+		8EA211271D60A041003D2E6F /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		8EA211281D60A041003D2E6F /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,7 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				8EA2112A1D60A32B003D2E6F /* Resources */,
-				8EA211271D60A041003D2E6F /* RNIceLink-Bridging-Header.h */,
+				8EA211271D60A041003D2E6F /* Bridging-Header.h */,
 				8EA211281D60A041003D2E6F /* AppDelegate.swift */,
 			);
 			name = RNIceLink;
@@ -665,7 +665,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNIceLink;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNIceLink-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -693,7 +693,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = RNIceLink;
-				SWIFT_OBJC_BRIDGING_HEADER = "RNIceLink-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 			};
 			name = Release;
 		};
