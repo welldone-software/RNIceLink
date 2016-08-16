@@ -76,8 +76,6 @@ class IceLinkConferenceManager: RCTViewManager {
   }
 
   override func view() -> UIView {
-
-
     return videoContainer
   }
 }
