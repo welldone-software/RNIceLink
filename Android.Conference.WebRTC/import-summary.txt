@@ -1,0 +1,141 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .DS_Store
+* .idea/
+* .idea/.name
+* .idea/Android.Conference.WebRTC.iml
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/encodings.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/workspace.xml
+* build.xml
+* include/
+* include/audio_processing/
+* include/audio_processing/aec/
+* include/audio_processing/aec/echo_cancellation.h
+* include/audio_processing/aec/typedefs.h
+* include/audio_processing/aecm/
+* include/audio_processing/aecm/echo_control_mobile.h
+* include/audio_processing/aecm/typedefs.h
+* include/audio_processing/agc/
+* include/audio_processing/agc/agc.h
+* include/audio_processing/agc/constructormagic.h
+* include/audio_processing/agc/move.h
+* include/audio_processing/agc/scoped_ptr.h
+* include/audio_processing/agc/template_util.h
+* include/audio_processing/agc/typedefs.h
+* include/audio_processing/ns/
+* include/audio_processing/ns/noise_suppression.h
+* include/audio_processing/ns/noise_suppression_x.h
+* include/audio_processing/ns/typedefs.h
+* include/common_audio/
+* include/common_audio/audio_util.h
+* include/common_audio/constructormagic.h
+* include/common_audio/move.h
+* include/common_audio/push_resampler.h
+* include/common_audio/resampler.h
+* include/common_audio/scoped_ptr.h
+* include/common_audio/template_util.h
+* include/common_audio/typedefs.h
+* include/jni/
+* include/jni/classfile_constants.h
+* include/jni/darwin/
+* include/jni/darwin/jawt_md.h
+* include/jni/darwin/jni_md.h
+* include/jni/jawt.h
+* include/jni/jdwpTransport.h
+* include/jni/jni.h
+* include/jni/jvmti.h
+* include/jni/jvmticmlr.h
+* include/jni/linux/
+* include/jni/linux/jawt_md.h
+* include/jni/linux/jni_md.h
+* include/jni/win32/
+* include/jni/win32/bridge/
+* include/jni/win32/bridge/AccessBridgeCallbacks.h
+* include/jni/win32/bridge/AccessBridgeCalls.c
+* include/jni/win32/bridge/AccessBridgeCalls.h
+* include/jni/win32/bridge/AccessBridgePackages.h
+* include/jni/win32/jawt_md.h
+* include/jni/win32/jni_md.h
+* include/opus/
+* include/opus/opus.h
+* include/opus/opus_custom.h
+* include/opus/opus_defines.h
+* include/opus/opus_multistream.h
+* include/opus/opus_types.h
+* include/vpx/
+* include/vpx/vp8.h
+* include/vpx/vp8cx.h
+* include/vpx/vp8dx.h
+* include/vpx/vpx_codec.h
+* include/vpx/vpx_decoder.h
+* include/vpx/vpx_encoder.h
+* include/vpx/vpx_image.h
+* include/vpx/vpx_integer.h
+* proguard-project.txt
+* vpx_version.h
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* libs/arm64-v8a/libopus.so => app/src/main/jniLibs/arm64-v8a/libopus.so
+* libs/arm64-v8a/libopusJNI.so => app/src/main/jniLibs/arm64-v8a/libopusJNI.so
+* libs/arm64-v8a/libvpx.so => app/src/main/jniLibs/arm64-v8a/libvpx.so
+* libs/arm64-v8a/libvpxJNI.so => app/src/main/jniLibs/arm64-v8a/libvpxJNI.so
+* libs/armeabi-v7a/libaudioprocessing.so => app/src/main/jniLibs/armeabi-v7a/libaudioprocessing.so
+* libs/armeabi-v7a/libaudioprocessingJNI.so => app/src/main/jniLibs/armeabi-v7a/libaudioprocessingJNI.so
+* libs/armeabi-v7a/libopus.so => app/src/main/jniLibs/armeabi-v7a/libopus.so
+* libs/armeabi-v7a/libopusJNI.so => app/src/main/jniLibs/armeabi-v7a/libopusJNI.so
+* libs/armeabi-v7a/libvpx.so => app/src/main/jniLibs/armeabi-v7a/libvpx.so
+* libs/armeabi-v7a/libvpxJNI.so => app/src/main/jniLibs/armeabi-v7a/libvpxJNI.so
+* libs/fm.icelink.jar => app/libs/fm.icelink.jar
+* libs/fm.icelink.webrtc.jar => app/libs/fm.icelink.webrtc.jar
+* libs/fm.icelink.websync.jar => app/libs/fm.icelink.websync.jar
+* libs/fm.jar => app/libs/fm.jar
+* libs/fm.websync.chat.jar => app/libs/fm.websync.chat.jar
+* libs/fm.websync.jar => app/libs/fm.websync.jar
+* libs/fm.websync.subscribers.jar => app/libs/fm.websync.subscribers.jar
+* libs/x86/libopus.so => app/src/main/jniLibs/x86/libopus.so
+* libs/x86/libopusJNI.so => app/src/main/jniLibs/x86/libopusJNI.so
+* libs/x86/libvpx.so => app/src/main/jniLibs/x86/libvpx.so
+* libs/x86/libvpxJNI.so => app/src/main/jniLibs/x86/libvpxJNI.so
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+* src/.DS_Store => app/src/main/resources/.DS_Store
+* src/BuildJNILibraries.bat => app/src/main/resources/BuildJNILibraries.bat
+* src/CreateJNIHeaders.bat => app/src/main/resources/CreateJNIHeaders.bat
+* src/aaudioprocessing_AudioProcessingLibrary.c => app/src/main/resources/aaudioprocessing_AudioProcessingLibrary.c
+* src/aaudioprocessing_AudioProcessingLibrary.h => app/src/main/resources/aaudioprocessing_AudioProcessingLibrary.h
+* src/aopus_OpusLibrary.c => app/src/main/resources/aopus_OpusLibrary.c
+* src/aopus_OpusLibrary.h => app/src/main/resources/aopus_OpusLibrary.h
+* src/com/.DS_Store => app/src/main/resources/com/.DS_Store
+* src/com/google/.DS_Store => app/src/main/resources/com/google/.DS_Store
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)
