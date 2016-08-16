@@ -3,6 +3,7 @@ package com.rnicelink;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import fm.SingleAction;
@@ -18,8 +19,10 @@ public class IceLinkConferenceManager extends SimpleViewManager<View> {
 
   @Override
   protected View createViewInstance(ThemedReactContext reactContext) {
+    DefaultProviders.setAndroidContext(reactContext);
     LayoutInflater layoutInflater = LayoutInflater.from(reactContext);
     ViewGroup videoContainer = (ViewGroup) layoutInflater.inflate(R.layout.video_container, null);
+
     startSignalling();
     startLocalMedia(videoContainer);
     return videoContainer;
@@ -57,16 +60,36 @@ public class IceLinkConferenceManager extends SimpleViewManager<View> {
     }
   }
 
-  private void startLocalMedia(ViewGroup videoContainer) {
+  private void relayoutViewGroups(ViewGroup viewGroup) {
+    if (viewGroup.getChildCount() == 0) {
+      return;
+    }
+
+    View childView = viewGroup.getChildAt(0);
+    if (childView instanceof ViewGroup) {
+      ViewGroup childViewGroup = (ViewGroup) childView;
+      relayoutViewGroups(childViewGroup);
+    }
+
+    viewGroup.removeView(childView);
+    viewGroup.addView(childView,
+      new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams.MATCH_PARENT,
+        LinearLayout.LayoutParams.MATCH_PARENT));
+  }
+
+  private void startLocalMedia(final ViewGroup videoContainer) {
     try {
-      DefaultProviders.setAndroidContext(videoContainer.getContext());
       IceLinkConference iceLinkConference = IceLinkConference.getInstance();
       iceLinkConference.startLocalMedia(videoContainer, new SingleAction<String>() {
         @Override
         public void invoke(String error) {
           if (error != null) {
             logger.error("startLocalMedia failed. error:" + error);
+            return;
           }
+
+          relayoutViewGroups(videoContainer);
         }
       });
     } catch (Exception e) {
