@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let rootView = RCTRootView(
       bundleURL: jsCodeLocation!,
-      moduleName: "App",
+      moduleName: "RNIceLink",
       initialProperties: nil,
       launchOptions: launchOptions)
 

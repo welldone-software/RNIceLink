@@ -21,4 +21,4 @@ class RNIceLink extends React.Component {
   }
 }
 
-AppRegistry.registerComponent('App', () => RNIceLink)
+AppRegistry.registerComponent('RNIceLink', () => RNIceLink)
