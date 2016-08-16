@@ -2,9 +2,7 @@ package com.rnicelink;
 
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.Locale;
-
 import fm.SingleAction;
 import fm.icelink.webrtc.AndroidLayoutManager;
 import fm.icelink.webrtc.GetMediaArgs;
@@ -14,104 +12,97 @@ import fm.icelink.webrtc.LayoutScale;
 import fm.icelink.webrtc.LocalMediaStream;
 import fm.icelink.webrtc.UserMedia;
 
-public class LocalMedia
-{
-    // We're going to need both audio and video
-    // for this example. We can constrain the
-    // video slightly for performance benefits.
-    private boolean audio = true;
-    private boolean video = true;
-    private int videoWidth     = 640;
-    private int videoHeight    = 480;
-    private int videoFrameRate = 15;
+public class LocalMedia {
+  // We're going to need both audio and video
+  // for this example. We can constrain the
+  // video slightly for performance benefits.
+  private boolean audio = true;
+  private boolean video = true;
+  private int videoWidth = 640;
+  private int videoHeight = 480;
+  private int videoFrameRate = 15;
 
-    private LocalMediaStream localMediaStream;
-    public LocalMediaStream getLocalMediaStream() { return localMediaStream; }
+  private LocalMediaStream localMediaStream;
 
-    private AndroidLayoutManager layoutManager;
-    public AndroidLayoutManager getLayoutManager() { return layoutManager; }
+  public LocalMediaStream getLocalMediaStream() {
+    return localMediaStream;
+  }
 
-    public void start(final ViewGroup videoContainer, final SingleAction<String> callback) throws Exception
-    {
-        // WebRTC audio and video streams require us to first get access to
-        // the local media (microphone, camera, or both).
-        UserMedia.getMedia(new GetMediaArgs(audio, video)
-        {{
-            // Uncomment this line to do in-app screen capture.
-            //setVideoCaptureProvider(new AndroidScreenCaptureProvider(videoContainer.getRootView()));
+  private AndroidLayoutManager layoutManager;
 
-            // Uncomment this line to do full-screen capture (Android 5.0+ only, requires the calling Activity to pass in a MediaProjection instance).
-            // You will likely also want to comment out "app.pauseLocalVideo();" and "app.resumeLocalVideo();" in VideoActivity.java to prevent the
-            // media capture from being paused/resumed when the activity is paused/resumed.
-            //setVideoCaptureProvider(new AndroidMediaProjectionCaptureProvider(projection));
+  public AndroidLayoutManager getLayoutManager() {
+    return layoutManager;
+  }
 
-            setVideoWidth(videoWidth);         // optional
-            setVideoHeight(videoHeight);       // optional
-            setVideoFrameRate(videoFrameRate); // optional
-            setDefaultVideoPreviewScale(LayoutScale.Contain); // optional
-            setDefaultVideoScale(LayoutScale.Contain);        // optional
-            setOnFailure(new SingleAction<GetMediaFailureArgs>()
-            {
-                public void invoke(GetMediaFailureArgs e)
-                {
-                    callback.invoke(String.format(Locale.getDefault(), "Could not get media. %s", e.getException().getMessage()));
-                }
-            });
-            setOnSuccess(new SingleAction<GetMediaSuccessArgs>()
-            {
-                public void invoke(GetMediaSuccessArgs e)
-                {
-                    try
-                    {
-                        // We have successfully acquired access to the local
-                        // audio/video device! Grab a reference to the media.
-                        // Internally, it maintains access to the local audio
-                        // and video feeds coming from the device hardware.
-                        localMediaStream = e.getLocalStream();
+  public void start(final ViewGroup videoContainer, final SingleAction<String> callback) throws Exception {
+    // WebRTC audio and video streams require us to first get access to
+    // the local media (microphone, camera, or both).
+    UserMedia.getMedia(new GetMediaArgs(audio, video) {{
+      // Uncomment this line to do in-app screen capture.
+      //setVideoCaptureProvider(new AndroidScreenCaptureProvider(videoContainer.getRootView()));
 
-                        // This is our local video control, a View. It is
-                        // constantly updated with our live video feed since
-                        // we requested video above. Add it directly to the UI
-                        // or use the IceLink layout manager, which we do below.
-                        View localVideoControl = (View)e.getLocalVideoControl();
+      // Uncomment this line to do full-screen capture (Android 5.0+ only, requires the calling Activity to pass in a MediaProjection instance).
+      // You will likely also want to comment out "app.pauseLocalVideo();" and "app.resumeLocalVideo();" in VideoActivity.java to prevent the
+      // media capture from being paused/resumed when the activity is paused/resumed.
+      //setVideoCaptureProvider(new AndroidMediaProjectionCaptureProvider(projection));
 
-                        // Create an IceLink layout manager, which makes the task
-                        // of arranging video controls easy. Give it a reference
-                        // to a View that can be filled with video feeds.
-                        layoutManager = new AndroidLayoutManager(videoContainer);
+      setVideoWidth(videoWidth);         // optional
+      setVideoHeight(videoHeight);       // optional
+      setVideoFrameRate(videoFrameRate); // optional
+      setDefaultVideoPreviewScale(LayoutScale.Contain); // optional
+      setDefaultVideoScale(LayoutScale.Contain);        // optional
+      setOnFailure(new SingleAction<GetMediaFailureArgs>() {
+        public void invoke(GetMediaFailureArgs e) {
+          callback.invoke(String.format(Locale.getDefault(), "Could not get media. %s", e.getException().getMessage()));
+        }
+      });
+      setOnSuccess(new SingleAction<GetMediaSuccessArgs>() {
+        public void invoke(GetMediaSuccessArgs e) {
+          try {
+            // We have successfully acquired access to the local
+            // audio/video device! Grab a reference to the media.
+            // Internally, it maintains access to the local audio
+            // and video feeds coming from the device hardware.
+            localMediaStream = e.getLocalStream();
 
-                        // Position and display the local video control on-screen
-                        // by passing it to the layout manager created above.
-                        layoutManager.setLocalVideoControl(localVideoControl);
+            // This is our local video control, a View. It is
+            // constantly updated with our live video feed since
+            // we requested video above. Add it directly to the UI
+            // or use the IceLink layout manager, which we do below.
+            View localVideoControl = (View) e.getLocalVideoControl();
 
-                        callback.invoke(null);
-                    }
-                    catch (Exception ex)
-                    {
-                        ex.printStackTrace();
-                    }
-                }
-            });
-        }});
+            // Create an IceLink layout manager, which makes the task
+            // of arranging video controls easy. Give it a reference
+            // to a View that can be filled with video feeds.
+            layoutManager = new AndroidLayoutManager(videoContainer);
+
+            // Position and display the local video control on-screen
+            // by passing it to the layout manager created above.
+            layoutManager.setLocalVideoControl(localVideoControl);
+
+            callback.invoke(null);
+          } catch (Exception ex) {
+            ex.printStackTrace();
+          }
+        }
+      });
+    }});
+  }
+
+  public void stop(final SingleAction<String> callback) throws Exception {
+    // Clear out the layout manager.
+    if (layoutManager != null) {
+      layoutManager.removeRemoteVideoControls();
+      layoutManager.unsetLocalVideoControl();
+      layoutManager = null;
     }
 
-    public void stop(final SingleAction<String> callback) throws Exception
-    {
-        // Clear out the layout manager.
-        if (layoutManager != null)
-        {
-            layoutManager.removeRemoteVideoControls();
-            layoutManager.unsetLocalVideoControl();
-            layoutManager = null;
-        }
-
-        // Stop the local media stream.
-        if (localMediaStream != null)
-        {
-            localMediaStream.stop();
-            localMediaStream = null;
-        }
-
-        callback.invoke(null);
+    // Stop the local media stream.
+    if (localMediaStream != null) {
+      localMediaStream.stop();
+      localMediaStream = null;
     }
+
+    callback.invoke(null);
+  }
 }
