@@ -1,0 +1,275 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C520D0419675D400031B03C /* Cocoa.Opus-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 6C520D0319675D400031B03C /* Cocoa.Opus-Prefix.pch */; };
+		6C520DA619676E760031B03C /* libopus-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C520DA519676E760031B03C /* libopus-iOS.a */; };
+		6C520DB319676ED60031B03C /* CocoaOpusEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C520DB119676ED60031B03C /* CocoaOpusEncoder.h */; };
+		6C520DB419676ED60031B03C /* CocoaOpusEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C520DB219676ED60031B03C /* CocoaOpusEncoder.m */; };
+		6C520DB719676EDF0031B03C /* CocoaOpusDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C520DB519676EDF0031B03C /* CocoaOpusDecoder.h */; };
+		6C520DB819676EDF0031B03C /* CocoaOpusDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C520DB619676EDF0031B03C /* CocoaOpusDecoder.m */; };
+		6C520DBB19676EEF0031B03C /* CocoaOpusBuffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C520DB919676EEF0031B03C /* CocoaOpusBuffer.h */; };
+		6C520DBC19676EEF0031B03C /* CocoaOpusBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C520DBA19676EEF0031B03C /* CocoaOpusBuffer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C520CC219675AF30031B03C /* libCocoa.Opus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoa.Opus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C520CC819675AF30031B03C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6C520CC919675AF30031B03C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6C520D0319675D400031B03C /* Cocoa.Opus-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cocoa.Opus-Prefix.pch"; sourceTree = "<group>"; };
+		6C520DA519676E760031B03C /* libopus-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopus-iOS.a"; path = "Cocoa.Opus/lib/libopus-iOS.a"; sourceTree = "<group>"; };
+		6C520DA819676E8F0031B03C /* opus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opus.h; sourceTree = "<group>"; };
+		6C520DA919676E8F0031B03C /* opus_custom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opus_custom.h; sourceTree = "<group>"; };
+		6C520DAA19676E8F0031B03C /* opus_defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opus_defines.h; sourceTree = "<group>"; };
+		6C520DAB19676E8F0031B03C /* opus_multistream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opus_multistream.h; sourceTree = "<group>"; };
+		6C520DAC19676E8F0031B03C /* opus_types.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opus_types.h; sourceTree = "<group>"; };
+		6C520DB119676ED60031B03C /* CocoaOpusEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaOpusEncoder.h; sourceTree = "<group>"; };
+		6C520DB219676ED60031B03C /* CocoaOpusEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaOpusEncoder.m; sourceTree = "<group>"; };
+		6C520DB519676EDF0031B03C /* CocoaOpusDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaOpusDecoder.h; sourceTree = "<group>"; };
+		6C520DB619676EDF0031B03C /* CocoaOpusDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaOpusDecoder.m; sourceTree = "<group>"; };
+		6C520DB919676EEF0031B03C /* CocoaOpusBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaOpusBuffer.h; sourceTree = "<group>"; };
+		6C520DBA19676EEF0031B03C /* CocoaOpusBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaOpusBuffer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C520CBF19675AF30031B03C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C520DA619676E760031B03C /* libopus-iOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C520CB919675AF30031B03C = {
+			isa = PBXGroup;
+			children = (
+				6C520CCB19675AF30031B03C /* Cocoa.Opus */,
+				6C520CC419675AF30031B03C /* Frameworks */,
+				6C520CC319675AF30031B03C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C520CC319675AF30031B03C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C520CC219675AF30031B03C /* libCocoa.Opus.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C520CC419675AF30031B03C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C520DA519676E760031B03C /* libopus-iOS.a */,
+				6C520CC719675AF30031B03C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C520CC719675AF30031B03C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C520CC819675AF30031B03C /* Foundation.framework */,
+				6C520CC919675AF30031B03C /* CoreData.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		6C520CCB19675AF30031B03C /* Cocoa.Opus */ = {
+			isa = PBXGroup;
+			children = (
+				6C520DA719676E8F0031B03C /* opus */,
+				6C520DB919676EEF0031B03C /* CocoaOpusBuffer.h */,
+				6C520DBA19676EEF0031B03C /* CocoaOpusBuffer.m */,
+				6C520DB119676ED60031B03C /* CocoaOpusEncoder.h */,
+				6C520DB219676ED60031B03C /* CocoaOpusEncoder.m */,
+				6C520DB519676EDF0031B03C /* CocoaOpusDecoder.h */,
+				6C520DB619676EDF0031B03C /* CocoaOpusDecoder.m */,
+				6C520CCC19675AF30031B03C /* Supporting Files */,
+			);
+			path = Cocoa.Opus;
+			sourceTree = "<group>";
+		};
+		6C520CCC19675AF30031B03C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6C520D0319675D400031B03C /* Cocoa.Opus-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6C520DA719676E8F0031B03C /* opus */ = {
+			isa = PBXGroup;
+			children = (
+				6C520DA819676E8F0031B03C /* opus.h */,
+				6C520DA919676E8F0031B03C /* opus_custom.h */,
+				6C520DAA19676E8F0031B03C /* opus_defines.h */,
+				6C520DAB19676E8F0031B03C /* opus_multistream.h */,
+				6C520DAC19676E8F0031B03C /* opus_types.h */,
+			);
+			path = opus;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6C520CC019675AF30031B03C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C520DB719676EDF0031B03C /* CocoaOpusDecoder.h in Headers */,
+				6C520DB319676ED60031B03C /* CocoaOpusEncoder.h in Headers */,
+				6C520D0419675D400031B03C /* Cocoa.Opus-Prefix.pch in Headers */,
+				6C520DBB19676EEF0031B03C /* CocoaOpusBuffer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6C520CC119675AF30031B03C /* Cocoa.Opus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C520CE619675AF30031B03C /* Build configuration list for PBXNativeTarget "Cocoa.Opus" */;
+			buildPhases = (
+				6C520CBE19675AF30031B03C /* Sources */,
+				6C520CBF19675AF30031B03C /* Frameworks */,
+				6C520CC019675AF30031B03C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cocoa.Opus;
+			productName = Cocoa.Opus;
+			productReference = 6C520CC219675AF30031B03C /* libCocoa.Opus.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C520CBA19675AF30031B03C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Frozen Mountain Software";
+			};
+			buildConfigurationList = 6C520CBD19675AF30031B03C /* Build configuration list for PBXProject "Cocoa.Opus-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6C520CB919675AF30031B03C;
+			productRefGroup = 6C520CC319675AF30031B03C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C520CC119675AF30031B03C /* Cocoa.Opus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C520CBE19675AF30031B03C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C520DBC19676EEF0031B03C /* CocoaOpusBuffer.m in Sources */,
+				6C520DB819676EDF0031B03C /* CocoaOpusDecoder.m in Sources */,
+				6C520DB419676ED60031B03C /* CocoaOpusEncoder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6C520CE419675AF30031B03C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6C520CE519675AF30031B03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-ObjC";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		6C520CE719675AF30031B03C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cocoa.Opus/Cocoa.Opus-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Cocoa.Opus/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6C520CE819675AF30031B03C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Cocoa.Opus/Cocoa.Opus-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Cocoa.Opus/lib",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C520CBD19675AF30031B03C /* Build configuration list for PBXProject "Cocoa.Opus-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C520CE419675AF30031B03C /* Debug */,
+				6C520CE519675AF30031B03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C520CE619675AF30031B03C /* Build configuration list for PBXNativeTarget "Cocoa.Opus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C520CE719675AF30031B03C /* Debug */,
+				6C520CE819675AF30031B03C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6C520CBA19675AF30031B03C /* Project object */;
+}

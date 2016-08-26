@@ -16,9 +16,13 @@
     "no-shadow": ["off"],
     "arrow-body-style": ["off"],
     "no-mixed-operators": ["off"],
+    "global-require": ["off"],
+    "import/no-unresolved": ["off"],
     "jsx-quotes": ["error", "prefer-single"],
     "react/jsx-filename-extension": ["off"],
-    "global-require": ["off"],
-    "import/no-unresolved": ["off"]
+    "import/prefer-default-export": ["off"],
+    "import/no-extraneous-dependencies": ["off"],
+    "import/no-named-as-default": ["off"],
+    "import/no-named-as-default-member": ["off"]
   }
 }
