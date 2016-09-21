@@ -7,22 +7,22 @@
   },
   "settings": {
     "import/resolver": {
-      "babel-module-alias": {}
+      "babel-module": {}
     }
   },
   "rules": {
     "semi": ["error", "never"],
     "new-cap": ["off"],
     "no-shadow": ["off"],
+    "global-require": ["off"],
+    "arrow-parens": ["off"],
     "arrow-body-style": ["off"],
     "no-mixed-operators": ["off"],
-    "global-require": ["off"],
-    "import/no-unresolved": ["off"],
+    "class-methods-use-this": ["off"],
     "jsx-quotes": ["error", "prefer-single"],
     "react/jsx-filename-extension": ["off"],
+    "react/prefer-stateless-function": ["off"],
     "import/prefer-default-export": ["off"],
-    "import/no-extraneous-dependencies": ["off"],
-    "import/no-named-as-default": ["off"],
-    "import/no-named-as-default-member": ["off"]
+    "import/no-extraneous-dependencies": ["off"]
   }
 }
