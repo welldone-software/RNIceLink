@@ -5,7 +5,7 @@
 
 @implementation IceLinkConference
 
-static NSString *icelinkServerAddress = @"demo.icelink.fm:3478";
+static NSString *icelinkServerAddress = @"54.172.172.6:3478";
 static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // WebSync On-Demand
 
 @synthesize sessionId = _sessionId;
@@ -122,8 +122,8 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   // Supply TURN relay credentials in case we are behind a
   // highly restrictive firewall. These credentials will be
   // verified by the TURN server.
-  [_conference setRelayUsername:@"test"];
-  [_conference setRelayPassword:@"pa55w0rd!"];
+  [_conference setRelayUsername:@"roboteam"];
+  [_conference setRelayPassword:@"roboteam"];
 
   // Add a few event handlers to the conference so we can see
   // when a new P2P link is created or changes state.

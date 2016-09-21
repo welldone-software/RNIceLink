@@ -16,7 +16,7 @@ class RNIceLink extends React.Component {
 
   render() {
     return (<View style={styles.container}>
-      <IceLinkConference session='998765' />
+      <IceLinkConference sessionId='998765' />
     </View>)
   }
 }

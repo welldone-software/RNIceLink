@@ -87,7 +87,7 @@ android {
   buildToolsVersion "23.0.3"
   defaultConfig {
     applicationId "com.rnicelink"
-    minSdkVersion 16
+    minSdkVersion 21
     targetSdkVersion 23
     versionCode 1
     versionName "1.0"
@@ -128,11 +128,10 @@ android {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile fileTree(include: ['*.jar'], dir: 'libs')
   compile 'com.android.support:multidex:1.0.1'
   compile 'com.android.support:appcompat-v7:23.0.1'
   compile 'com.facebook.react:react-native:+'
-
   compile files('libs/fm.icelink.jar')
   compile files('libs/fm.icelink.webrtc.jar')
   compile files('libs/fm.icelink.websync.jar')

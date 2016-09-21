@@ -16,8 +16,13 @@ export class IceLinkConference extends React.Component {
   }
 
   render() {
-    return (<IceLinkConferenceView style={styles.container} />)
+    return (<IceLinkConferenceView
+      style={styles.container}
+      sessionId={this.props.sessionId}
+    />)
   }
 }
 
-IceLinkConference.propTypes = {}
+IceLinkConference.propTypes = {
+  sessionId: React.PropTypes.string,
+}
