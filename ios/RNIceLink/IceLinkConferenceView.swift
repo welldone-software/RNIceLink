@@ -1,11 +1,10 @@
 import Foundation
 
 class IceLinkConferenceView: UIView {
-  let iceLinkConfrence = IceLinkConference()
+  let iceLinkConfrence = IceLinkConference.instance()!
   
   init() {
     super.init(frame: CGRect())
-    startSignalling()
     startLocalMedia()
     startConference()
   }
@@ -13,7 +12,18 @@ class IceLinkConferenceView: UIView {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-
+  
+  @objc
+  var iceLinkServerAddress: String? {
+    get {
+      return iceLinkConfrence.icelinkServerAddress
+    }
+    
+    set (value) {
+      iceLinkConfrence.icelinkServerAddress = value
+    }
+  }
+  
   @objc
   var sessionId: String? {
     get {
@@ -25,22 +35,16 @@ class IceLinkConferenceView: UIView {
     }
   }
   
-  func startSignalling() {
-    iceLinkConfrence.startSignalling { message in
-      if let message = message {
-        NSLog("startSignalling failed. error (%@)", message)
+  @objc
+  var peerId: String? {
+    didSet {
+      if let peerId = peerId {
+        let conference = self.iceLinkConfrence.conference!
+        conference.link(withPeerId: peerId)
       }
     }
   }
-
-  func stopSignalling() {
-    iceLinkConfrence.stopSignalling { message in
-      if let message = message {
-        NSLog("stopSignalling failed. error (%@)", message)
-      }
-    }
-  }
-
+  
   func startLocalMedia() {
     iceLinkConfrence.startLocalMedia(self) { message in
       if let message = message {
@@ -48,7 +52,7 @@ class IceLinkConferenceView: UIView {
       }
     }
   }
-
+  
   func stopLocalMedia() {
     iceLinkConfrence.stopLocalMedia { message in
       if let message = message {
@@ -56,31 +60,32 @@ class IceLinkConferenceView: UIView {
       }
     }
   }
-
+  
   func startConference() {
-    iceLinkConfrence.start { message in
-      if let message = message {
-        NSLog("startConference failed. error (%@)", message)
-      }
-    }
+    iceLinkConfrence.startConference()
+    let conference = self.iceLinkConfrence.conference!
+    conference.add(onLinkOfferAnswer: { (args: FMIceLinkLinkOfferAnswerArgs?) in
+      let offerAnswer = FMIceLinkLinkOfferAnswerArgs.toJson(with: args)
+      let a2 = offerAnswer
+    })
+    
+    conference.add(onLinkCandidateBlock: { (args: FMIceLinkLinkCandidateArgs?) in
+      
+    })
   }
-
+  
   func stopConference() {
-    iceLinkConfrence.stop { message in
-      if let message = message {
-        NSLog("stopConference failed. error (%@)", message)
-      }
-    }
+    iceLinkConfrence.stopConference()
   }
-
+  
   func useNextVideoDevice() {
     iceLinkConfrence.useNextVideoDevice()
   }
-
+  
   func pauseAudio() {
     iceLinkConfrence.pauseAudio()
   }
-
+  
   func resumeAudio() {
     iceLinkConfrence.resumeAudio()
   }

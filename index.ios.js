@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { AppRegistry, StyleSheet, View } from 'react-native'
 import { IceLinkConference } from 'components/IceLinkConference'
 
@@ -9,14 +9,21 @@ const styles = StyleSheet.create({
   },
 })
 
-class RNIceLink extends React.Component {
-  ComponentShouldUpdate() {
-    return true
+class RNIceLink extends Component {
+  componentWillMount() {
+    this.setState({
+      sessionId: 'session-01',
+      peerId: 'peer-01',
+    })
   }
 
   render() {
     return (<View style={styles.container}>
-      <IceLinkConference sessionId='998765' />
+      <IceLinkConference
+        sessionId={this.state.sessionId}
+        peerId={this.state.peerId}
+        icelinkServerAddress='54.172.172.6:3478'
+      />
     </View>)
   }
 }
