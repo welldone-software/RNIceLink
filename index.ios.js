@@ -22,7 +22,7 @@ class RNIceLink extends Component {
       <IceLinkConference
         sessionId={this.state.sessionId}
         peerId={this.state.peerId}
-        icelinkServerAddress='54.172.172.6:3478'
+        iceLinkServerAddress='54.172.172.6:3478'
       />
     </View>)
   }

@@ -4,7 +4,6 @@
 #import "FMIceLink.h"
 #import "FMIceLinkWebRTC.h"
 
-#import "Signalling.h"
 #import "LocalMedia.h"
 
 @interface IceLinkConference : NSObject
