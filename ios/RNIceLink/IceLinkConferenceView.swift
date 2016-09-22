@@ -66,7 +66,7 @@ class IceLinkConferenceView: UIView {
     let conference = self.iceLinkConfrence.conference!
     conference.add(onLinkOfferAnswer: { (args: FMIceLinkLinkOfferAnswerArgs?) in
       let offerAnswer = FMIceLinkLinkOfferAnswerArgs.toJson(with: args)
-      let a2 = offerAnswer
+
     })
     
     conference.add(onLinkCandidateBlock: { (args: FMIceLinkLinkCandidateArgs?) in
