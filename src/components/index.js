@@ -10,6 +10,11 @@ const styles = StyleSheet.create({
 })
 
 export class App extends Component {
+  constructor() {
+    super()
+    this.onOfferAnswer = this.onOfferAnswer.bind(this)
+  }
+
   componentWillMount() {
     this.setState({
       sessionId: 'session-01',
@@ -18,12 +23,17 @@ export class App extends Component {
     })
   }
 
+  onOfferAnswer(offerAnswer) {
+
+  }
+
   render() {
     return (<View style={styles.container}>
       <IceLinkConference
         sessionId={this.state.sessionId}
         peerId={this.state.peerId}
         iceLinkServerAddress={this.state.iceLinkServerAddress}
+        onOfferAnswer={() => {}}
       />
     </View>)
   }

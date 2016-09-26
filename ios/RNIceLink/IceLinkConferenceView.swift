@@ -14,36 +14,37 @@ class IceLinkConferenceView: UIView {
   }
 
   @objc
-  var onOfferAnswer: RCTBubblingEventBlock?
+  var onOfferAnswer: RCTBubblingEventBlock? {
+    didSet {
+      if onOfferAnswer != nil {
+        addConferenceLink()
+      }
+    }
+  }
 
   @objc
   var iceLinkServerAddress: String? {
-    get {
-      return iceLinkConfrence.icelinkServerAddress
-    }
-    
-    set (value) {
-      iceLinkConfrence.icelinkServerAddress = value
+    didSet {
+      if iceLinkServerAddress != nil {
+        addConferenceLink()
+      }
     }
   }
   
   @objc
   var sessionId: String? {
-    get {
-      return iceLinkConfrence.sessionId
-    }
-    
-    set (value) {
-      iceLinkConfrence.sessionId = value
+    didSet {
+      if sessionId != nil {
+        addConferenceLink()
+      }
     }
   }
   
   @objc
   var peerId: String? {
     didSet {
-      if let peerId = peerId {
-        let conference = self.iceLinkConfrence.conference!
-        conference.link(withPeerId: peerId)
+      if peerId != nil {
+        addConferenceLink()
       }
     }
   }
@@ -65,20 +66,30 @@ class IceLinkConferenceView: UIView {
   }
   
   func startConference() {
-    iceLinkConfrence.startConference()
-    let conference = iceLinkConfrence.conference!
-    conference.add(onLinkOfferAnswer: { (args: FMIceLinkLinkOfferAnswerArgs?) in
-      if let onOfferAnswer = self.onOfferAnswer {
-        let offerAnswer = FMIceLinkLinkOfferAnswerArgs.toJson(with: args)
-        onOfferAnswer(["offerAnswer": offerAnswer])
-      }
-    })
-    
-    conference.add(onLinkCandidateBlock: { (args: FMIceLinkLinkCandidateArgs?) in
-      
-    })
+    iceLinkConfrence.startConference()    
   }
-  
+
+  func addConferenceLink() {
+    if let sessionId = self.sessionId,
+      let peerId = self.peerId,
+      let iceLinkServerAddress = self.iceLinkServerAddress,
+      let onOfferAnswer = self.onOfferAnswer {
+      
+      let conference = self.iceLinkConfrence.conference!
+      if !conference.isLinked(withPeerId: peerId) {
+          iceLinkConfrence.sessionId = sessionId
+          iceLinkConfrence.icelinkServerAddress = iceLinkServerAddress
+
+          conference.add(onLinkOfferAnswer: { (args: FMIceLinkLinkOfferAnswerArgs?) in
+            let offerAnswer = FMIceLinkLinkOfferAnswerArgs.toJson(with: args)
+            onOfferAnswer(["offerAnswer": offerAnswer])
+          })
+          
+          conference.link(withPeerId: peerId)
+      }
+    }
+  }
+
   func stopConference() {
     iceLinkConfrence.stopConference()
   }

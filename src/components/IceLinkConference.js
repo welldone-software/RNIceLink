@@ -17,6 +17,7 @@ export class IceLinkConference extends Component {
       sessionId={this.props.sessionId}
       peerId={this.props.peerId}
       iceLinkServerAddress={this.props.iceLinkServerAddress}
+      onOfferAnswer={this.props.onOfferAnswer}
     />)
   }
 }
@@ -25,4 +26,5 @@ IceLinkConference.propTypes = {
   sessionId: React.PropTypes.string,
   peerId: React.PropTypes.string,
   iceLinkServerAddress: React.PropTypes.string,
+  onOfferAnswer: React.PropTypes.func,
 }

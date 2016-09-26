@@ -5,4 +5,5 @@
   RCT_EXPORT_VIEW_PROPERTY(iceLinkServerAddress, NSString*)
   RCT_EXPORT_VIEW_PROPERTY(sessionId, NSString*)
   RCT_EXPORT_VIEW_PROPERTY(peerId, NSString*)
+  RCT_EXPORT_VIEW_PROPERTY(onOfferAnswer, RCTBubblingEventBlock)
 @end
