@@ -14,6 +14,7 @@ class RNIceLink extends Component {
     this.setState({
       sessionId: 'session-01',
       peerId: 'peer-01',
+      iceLinkServerAddress: '54.172.172.6:3478',
     })
   }
 
@@ -22,7 +23,7 @@ class RNIceLink extends Component {
       <IceLinkConference
         sessionId={this.state.sessionId}
         peerId={this.state.peerId}
-        iceLinkServerAddress='54.172.172.6:3478'
+        iceLinkServerAddress={this.state.iceLinkServerAddress}
       />
     </View>)
   }

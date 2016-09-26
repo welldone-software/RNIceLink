@@ -12,7 +12,10 @@ class IceLinkConferenceView: UIView {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
+
+  @objc
+  var onOfferAnswer: RCTBubblingEventBlock?
+
   @objc
   var iceLinkServerAddress: String? {
     get {
@@ -63,10 +66,12 @@ class IceLinkConferenceView: UIView {
   
   func startConference() {
     iceLinkConfrence.startConference()
-    let conference = self.iceLinkConfrence.conference!
+    let conference = iceLinkConfrence.conference!
     conference.add(onLinkOfferAnswer: { (args: FMIceLinkLinkOfferAnswerArgs?) in
-      let offerAnswer = FMIceLinkLinkOfferAnswerArgs.toJson(with: args)
-
+      if let onOfferAnswer = self.onOfferAnswer {
+        let offerAnswer = FMIceLinkLinkOfferAnswerArgs.toJson(with: args)
+        onOfferAnswer(["offerAnswer": offerAnswer])
+      }
     })
     
     conference.add(onLinkCandidateBlock: { (args: FMIceLinkLinkCandidateArgs?) in
