@@ -33,7 +33,7 @@ export class App extends Component {
         sessionId={this.state.sessionId}
         peerId={this.state.peerId}
         iceLinkServerAddress={this.state.iceLinkServerAddress}
-        onOfferAnswer={() => {}}
+        onOfferAnswer={this.onOfferAnswer}
       />
     </View>)
   }

@@ -11,13 +11,24 @@ const styles = StyleSheet.create({
 })
 
 export class IceLinkConference extends Component {
+  constructor() {
+    super()
+    this.onOfferAnswer = this.onOfferAnswer.bind(this)
+  }
+
+  onOfferAnswer(event) {
+    if (this.props.onOfferAnswer) {
+      this.props.onOfferAnswer(event.nativeEvent)
+    }
+  }
+
   render() {
     return (<IceLinkConferenceView
       style={styles.container}
       sessionId={this.props.sessionId}
       peerId={this.props.peerId}
       iceLinkServerAddress={this.props.iceLinkServerAddress}
-      onOfferAnswer={this.props.onOfferAnswer}
+      onOfferAnswer={this.onOfferAnswer}
     />)
   }
 }
