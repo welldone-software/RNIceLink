@@ -10,9 +10,9 @@
     "start": "watchman watch-del-all && node node_modules/react-native/local-cli/cli.js start -- --reset-cache"
   },
   "dependencies": {
-    "mqtt": "^2.0.0",
     "react": "^15.3.2",
-    "react-native": "^0.34.0"
+    "react-native": "^0.34.0",
+    "react_native_mqtt": "^1.1.1"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^2.2.0",
