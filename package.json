@@ -3,8 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "cd ios && pod install",
-    "install-heylo-common": "rm -rf node_modules/heylo-common/ && npm install heylo-common",
     "lint": "eslint \"src/**/*.js\"",
     "test": "export NODE_ENV=development && mocha \"src/test/**/*.spec.js\"",
     "start": "watchman watch-del-all && node node_modules/react-native/local-cli/cli.js start -- --reset-cache"
