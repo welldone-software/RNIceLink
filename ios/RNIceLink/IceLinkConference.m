@@ -5,10 +5,9 @@
 
 @implementation IceLinkConference
 
-static NSString *icelinkServerAddress = @"demo.icelink.fm:3478";
-static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // WebSync On-Demand
-
 @synthesize sessionId = _sessionId;
+@synthesize icelinkServerAddress = _icelinkServerAddress;
+@synthesize conference = _conference;
 
 + (IceLinkConference *)instance
 {
@@ -57,25 +56,6 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   return self;
 }
 
-- (void)startSignalling:(void (^)(NSString *))callback
-{
-  _signalling = [[Signalling alloc] initWithWebSyncServerUrl:websyncServerUrl];
-  [_signalling start:callback];
-}
-
-- (void)stopSignalling:(void (^)(NSString *)) callback
-{
-  if (_signalling)
-  {
-    [_signalling stop:callback];
-    _signalling = nil;
-  }
-  else
-  {
-    callback(nil);
-  }
-}
-
 - (void)startLocalMedia:(UIView *)videoContainer callback:(void (^)(NSString *))callback
 {
   _localMedia = [[LocalMedia alloc] init];
@@ -95,7 +75,7 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   }
 }
 
-- (void)startConference:(void (^)(NSString *))callback
+- (void)startConference
 {
   // Create a WebRTC audio stream description (requires a
   // reference to the local audio feed).
@@ -113,7 +93,7 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
 
   // Create a conference using our stream descriptions.
   _conference = [[FMIceLinkConference alloc]
-                 initWithServerAddress:icelinkServerAddress
+                 initWithServerAddress:_icelinkServerAddress
                  streams:[NSMutableArray arrayWithObjects:_audioStream, _videoStream, nil]];
 
   // Use our pre-generated DTLS certificate.
@@ -122,17 +102,14 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   // Supply TURN relay credentials in case we are behind a
   // highly restrictive firewall. These credentials will be
   // verified by the TURN server.
-  [_conference setRelayUsername:@"test"];
-  [_conference setRelayPassword:@"pa55w0rd!"];
+  [_conference setRelayUsername:@"roboteam"];
+  [_conference setRelayPassword:@"roboteam"];
 
   // Add a few event handlers to the conference so we can see
   // when a new P2P link is created or changes state.
   [_conference addOnLinkInit:_logLinkInitEvent];
   [_conference addOnLinkUp:_logLinkUpEvent];
   [_conference addOnLinkDown:_logLinkDownEvent];
-
-  // Attach signalling to the conference.
-  [_signalling attach:_conference sessionId:_sessionId callback:callback];
 }
 
 - (void)addRemoteVideoControl:(FMIceLinkStreamLinkInitArgs *)e
@@ -161,11 +138,8 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
   [FMLog infoWithMessage:[NSString stringWithFormat:@"Link to peer is DOWN. %@", e.exception.message]];
 }
 
-- (void)stopConference:(void (^)(NSString *))callback
+- (void)stopConference
 {
-  // Detach signalling from the conference.
-  [_signalling detach:^(NSString *error)
-   {
      [_conference removeOnLinkInit:_logLinkInitEvent];
      [_conference removeOnLinkUp:_logLinkUpEvent];
      [_conference removeOnLinkDown:_logLinkDownEvent];
@@ -175,8 +149,6 @@ static NSString *websyncServerUrl = @"http://v4.websync.fm/websync.ashx"; // Web
      [_videoStream removeOnLinkDown:_removeRemoteVideoControlEvent];
      _videoStream = nil;
      _audioStream = nil;
-     callback(error);
-   }];
 }
 
 - (void)useNextVideoDevice

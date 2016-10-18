@@ -1,14 +1,8 @@
 {
-  "presets": ["react-native"],
+  "presets": [ "react-native" ],
   "plugins": [
-    [
-      "module-alias", [
-      {"src": "./", "expose": "RNIceLink"},
-      {"src": "./app", "expose": "app"},
-      {"src": "./styles", "expose": "styles"},
-      {"src": "./components", "expose": "components"},
-      {"src": "./assets", "expose": "assets"},
-      {"src": "./test", "expose": "test"} ]
-    ]
+    ["module-resolver", {
+      "root": [ "src" ]
+    } ]
   ]
 }
